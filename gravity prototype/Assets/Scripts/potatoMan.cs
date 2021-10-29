@@ -9,23 +9,27 @@ public class potatoMan : MonoBehaviour
     [SerializeField] private float downForce;
     [SerializeField] private SpriteRenderer spriteRenderer;
     public Rigidbody2D rigidbody2d;
-    private bool isJumping;
+    //isjumping used to to lock the number of jumps to 2
+    private int isJumping;
+    // bool gravitydown is true when gravity is down or -1 on the y axis and false when gravity is up or 1 on the y axis
     private bool gravityDown;
 
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        isJumping = false;
+        isJumping = 0;
         gravityDown = true;
     }
 
     private void Update()
     {
+        //getting user input by reassigning transform.position
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0.0f, 0.0f);
         direction = direction.normalized;
         transform.position += direction * speed * Time.deltaTime;
+        //flipping character sprite based on the direction it is walking
         if(direction.x > 0)
         {
             spriteRenderer.flipX = true;
@@ -34,26 +38,37 @@ public class potatoMan : MonoBehaviour
         {
             spriteRenderer.flipX = false;
         }
+
+        //changing direction of jump force based on gravity direction
         if (Input.GetKeyDown(KeyCode.Space) && gravityDown)
         {
-            rigidbody2d.AddForce(Vector2.up * jumpForce);
-            isJumping = true;
+            //using isJumping to lock the number of jumps to 2
+            if (isJumping < 2)
+            {
+                rigidbody2d.AddForce(Vector2.up * jumpForce);
+                isJumping += 1;
+            }
         }
-        if(Input.GetKeyDown(KeyCode.S) &&  gravityDown)
+        else if (Input.GetKeyDown(KeyCode.Space) && !gravityDown)
+        {
+            if (isJumping < 2)
+            {
+                rigidbody2d.AddForce(Vector2.down * jumpForce);
+                isJumping += 1;
+            }
+        }
+
+        //changing direction of slam down force based on gravity direction
+        if (Input.GetKeyDown(KeyCode.S) && gravityDown)
         {
             rigidbody2d.AddForce(Vector2.down * downForce);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space) && !gravityDown)
-        {
-            rigidbody2d.AddForce(Vector2.down * jumpForce );
-            isJumping = true;
-        }
-        if (Input.GetKeyDown(KeyCode.S) && !gravityDown)
+        else if (Input.GetKeyDown(KeyCode.S) && !gravityDown)
         {
             rigidbody2d.AddForce(Vector2.up * downForce);
         }
 
+        //switching gravity of the rigidbody
         if (Input.GetKeyDown(KeyCode.E))
         {
             rigidbody2d.gravityScale *= -1;
@@ -63,6 +78,7 @@ public class potatoMan : MonoBehaviour
                 gravityDown = true;
         }
 
+        //flipping sprite of character on y axis based on gravity direction
         if (gravityDown)
             spriteRenderer.flipY = false;
         else if (!gravityDown)
@@ -70,10 +86,12 @@ public class potatoMan : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //when colliding to the ground making the jump counter = 0
         if (collision.gameObject.tag == "ground")
-            isJumping = false;
+            isJumping = 0;
     }
 
+    //using this getter to get the gravity in the rifle script
     public bool getGravityDown()
     {
         return gravityDown;

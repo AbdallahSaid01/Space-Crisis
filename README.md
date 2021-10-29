@@ -1,7 +1,7 @@
 # Space-Crisis
 Gravity prototype controls:
 'a' and 'd' or left and right arrows to move
-'spacebar' to jump (Don't have checkground() so if you press spacebar midair it'll add force. a suggestion is to lock it to jump twice instead of basically infinite times)
+'spacebar' to jump, number of jumps is locked to 2 until the collider of the character hits the ground
 'e' to switch gravity (up and down)
 's' to slam down (fall faster)
 mouse movement to move the gun around (no bullets implemented)

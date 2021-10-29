@@ -14,10 +14,13 @@ public class rifle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //got this code online cant explain but it controls the rifle with the mouse kek
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         difference.Normalize();
         float rotation_z = Mathf.Atan2(-difference.y, -difference.x) * Mathf.Rad2Deg;
         spriteRenderer.flipX = true;
+
+        // adjusting the rotation and flip on x and y based on gravity direction and facing direction of the weapon
         if (GetComponentInParent<potatoMan>().getGravityDown())
         {
             if (rotation_z < -90 || rotation_z > 90)
