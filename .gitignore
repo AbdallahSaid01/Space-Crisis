@@ -62,3 +62,5 @@ gravity prototype/Library/
 gravity prototype/Logs/
 gravity prototype/Temp/Assembly-CSharp.dll.hash
 gravity prototype/Temp/
+gravity prototype/obj/
+gravity prototype/UserSettings/EditorUserSettings.asset
