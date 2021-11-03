@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+gravity prototype/Library/
+gravity prototype/Logs/
+gravity prototype/Temp/Assembly-CSharp.dll.hash
+gravity prototype/Temp/
