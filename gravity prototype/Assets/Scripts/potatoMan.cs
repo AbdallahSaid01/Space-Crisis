@@ -13,12 +13,14 @@ public class potatoMan : MonoBehaviour
     private int isJumping;
     // bool gravitydown is true when gravity is down or -1 on the y axis and false when gravity is up or 1 on the y axis
     private bool gravityDown;
+    public Animator anim;
 
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         isJumping = 0;
         gravityDown = true;
+        
     }
 
     private void Update()
@@ -29,8 +31,10 @@ public class potatoMan : MonoBehaviour
         Vector3 direction = new Vector3(horizontal, 0.0f, 0.0f);
         direction = direction.normalized;
         transform.position += direction * speed * Time.deltaTime;
+        anim.SetFloat("running", Mathf.Abs(horizontal));
+
         //flipping character sprite based on the direction it is walking
-        if(direction.x > 0)
+        if (direction.x > 0)
         {
             spriteRenderer.flipX = true;
         }
