@@ -13,10 +13,11 @@ Player's speed, jump force, slam down force.
 -------------------------------------------------
 Music Sources:
 
-copy Labyrinth of Lost Dreams by Darren Curtis | https://www.darrencurtismusic.com/
+Labyrinth of Lost Dreams by Darren Curtis | https://www.darrencurtismusic.com/
 Music promoted on https://www.chosic.com/free-music/all/
 Creative Commons Attribution 3.0 Unported (CC BY 3.0)
 https://creativecommons.org/licenses/by/3.0/
+
 
 Unseen Horrors Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 3.0 License
