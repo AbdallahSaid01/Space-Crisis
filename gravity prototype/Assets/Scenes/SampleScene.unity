@@ -177,7 +177,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.5, y: 0}
+  m_Offset: {x: 8.435098, y: -0.9969809}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -188,7 +188,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.5, y: 6}
+  m_Size: {x: 3.4933224, y: 11.981871}
   m_EdgeRadius: 0
 --- !u!212 &123672231
 SpriteRenderer:
@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 182807748}
   - component: {fileID: 182807749}
   - component: {fileID: 182807750}
-  - component: {fileID: 182807751}
+  - component: {fileID: 182807752}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -381,32 +381,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &182807751
-BoxCollider2D:
+--- !u!114 &182807752
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182807747}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.52, y: 2}
-    newSize: {x: 11.25, y: 9.375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.52, y: 2}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae92f9be4d47a8d4aba086c82741dc6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riflePoint: {fileID: 1406057662}
+  bulletPrefab: {fileID: 2851337844699884971, guid: 8048625f2eddc9648b74d9a3bad57ba7, type: 3}
 --- !u!1 &483887894
 GameObject:
   m_ObjectHideFlags: 0
@@ -25903,13 +25891,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406057661}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 0.42, z: -0.1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -1.15, y: 0.42, z: -0.1}
   m_LocalScale: {x: 0.058205757, y: 0.053462338, z: 1}
   m_Children: []
   m_Father: {fileID: 182807748}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &1406057663
 SpriteRenderer:
   m_ObjectHideFlags: 0
