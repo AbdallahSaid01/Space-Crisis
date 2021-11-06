@@ -4,66 +4,19 @@ using UnityEngine;
 
 public class rifle : MonoBehaviour
 {
-    float rotation_z = 0;
-
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public Transform riflePoint;
+    public GameObject bulletPrefab;
     // Update is called once per frame
     void Update()
     {
-        //got this code online cant explain but it controls the rifle with the mouse kek
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        difference.Normalize();
-        spriteRenderer.flipX = true;
-
-        float cuurentRotation_z = Mathf.Atan2(-difference.y, -difference.x) * Mathf.Rad2Deg;
-        if (rotation_z != cuurentRotation_z)
+        if (Input.GetButtonDown("Fire1"))
         {
-            rotation_z = cuurentRotation_z;
-            // adjusting the rotation and flip on x and y based on gravity direction and facing direction of the weapon
-            if (GetComponentInParent<potatoMan>().getGravityDown())
-            {
-                if (rotation_z < -90 || rotation_z > 90)
-                {
-                    Vector3 normalPostion = new Vector3(1.28f, -0.95f, -0.1f);
-                    normalPostion.Normalize();
-                    spriteRenderer.flipY = true;
-                    transform.localPosition = normalPostion;
-                    transform.localRotation = Quaternion.Euler(0f, 0f, rotation_z);
-                }
-                else if (rotation_z <= 90 || rotation_z >= -90)
-                {
-                    Vector3 flipedPosition = new Vector3(-1.28f, -0.95f, -0.1f);
-                    flipedPosition.Normalize();
-                    spriteRenderer.flipY = false;
-                    transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
-                    transform.localPosition = flipedPosition;
-                }
-            }
-            else if (!GetComponentInParent<potatoMan>().getGravityDown())
-            {
-                if (rotation_z < -90 || rotation_z > 90)
-                {
-                    Vector3 normalPostion = new Vector3(1.28f, 0.95f, -0.1f);
-                    normalPostion.Normalize();
-                    spriteRenderer.flipY = false;
-                    transform.localPosition = normalPostion;
-                    transform.localRotation = Quaternion.Euler(0f, 0f, rotation_z);
-                }
-                else if (rotation_z <= 90 || rotation_z >= -90)
-                {
-                    Vector3 flipedPosition = new Vector3(-1.28f, 0.95f, -0.1f);
-                    flipedPosition.Normalize();
-                    spriteRenderer.flipY = true;
-                    transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
-                    transform.localPosition = flipedPosition;
-                }
-            }
+            fire_bullet();
         }
+    }
+
+    void fire_bullet()
+    {
+        Instantiate(bulletPrefab, riflePoint.position, riflePoint.rotation);
     }
 }
