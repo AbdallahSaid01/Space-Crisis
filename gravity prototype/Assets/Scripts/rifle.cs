@@ -5,14 +5,10 @@ using UnityEngine;
 public class rifle : MonoBehaviour
 {
     float rotation_z = 0;
-
+    public GameObject bulletPrefab;
+    public Transform firePoint;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -30,15 +26,16 @@ public class rifle : MonoBehaviour
             {
                 if (rotation_z < -90 || rotation_z > 90)
                 {
-                    Vector3 normalPostion = new Vector3(1.28f, -0.95f, -0.1f);
+                    Vector3 normalPostion = new Vector3(9.28f, 6f, -0.1f);
                     normalPostion.Normalize();
                     spriteRenderer.flipY = true;
+                    normalPostion.x *= 7;
                     transform.localPosition = normalPostion;
                     transform.localRotation = Quaternion.Euler(0f, 0f, rotation_z);
                 }
                 else if (rotation_z <= 90 || rotation_z >= -90)
                 {
-                    Vector3 flipedPosition = new Vector3(-1.28f, -0.95f, -0.1f);
+                    Vector3 flipedPosition = new Vector3(-9.28f, 6f, -0.1f);
                     flipedPosition.Normalize();
                     spriteRenderer.flipY = false;
                     transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
@@ -49,7 +46,7 @@ public class rifle : MonoBehaviour
             {
                 if (rotation_z < -90 || rotation_z > 90)
                 {
-                    Vector3 normalPostion = new Vector3(1.28f, 0.95f, -0.1f);
+                    Vector3 normalPostion = new Vector3(9.28f, 0.95f, -0.1f);
                     normalPostion.Normalize();
                     spriteRenderer.flipY = false;
                     transform.localPosition = normalPostion;
@@ -57,7 +54,7 @@ public class rifle : MonoBehaviour
                 }
                 else if (rotation_z <= 90 || rotation_z >= -90)
                 {
-                    Vector3 flipedPosition = new Vector3(-1.28f, 0.95f, -0.1f);
+                    Vector3 flipedPosition = new Vector3(-9.28f, 0.95f, -0.1f);
                     flipedPosition.Normalize();
                     spriteRenderer.flipY = true;
                     transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
@@ -65,5 +62,13 @@ public class rifle : MonoBehaviour
                 }
             }
         }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            fire_bullet();
+        }
+    }
+    void fire_bullet()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 }
