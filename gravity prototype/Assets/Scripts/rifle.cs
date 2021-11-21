@@ -8,7 +8,8 @@ public class rifle : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    
+    private bool pull = false;
+    private bool push = false;
     // Update is called once per frame
     void Update()
     {
@@ -62,6 +63,22 @@ public class rifle : MonoBehaviour
                 }
             }
         }
+        if (Input.mouseScrollDelta.y > 0f)
+        {
+            pull = true;
+            push = false;
+            bulletPrefab.GetComponent<Bullet>().set_pull_mod(pull);
+            print("pull mod " + pull);
+        }
+
+        else if (Input.mouseScrollDelta.y < 0f)
+        {
+            push = true;
+            pull = false;
+            bulletPrefab.GetComponent<Bullet>().set_push_mod(push);
+            print("push mod " + push);
+        }
+
         if (Input.GetButtonDown("Fire1"))
         {
             fire_bullet();
