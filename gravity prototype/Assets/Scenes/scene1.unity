@@ -127074,10 +127074,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Astronaut
       objectReference: {fileID: 0}
-    - target: {fileID: 7955039005682326250, guid: cb8dc1e22b7845d47a4389e87f16e349, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8dc1e22b7845d47a4389e87f16e349, type: 3}
 --- !u!1 &669022651
