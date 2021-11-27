@@ -36,29 +36,10 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             Instantiate(teleport_effect, GameObject.Find("potato fight").transform.position, GameObject.Find("potato fight").transform.rotation);
             teleport_bar.value -= 2;
-        }
-        else if(teleport_bar.value == 0)
-        {
-            isTeleFull = false;
-        }
-        else if(push_bar.value == 0)
-        {
-            isPushFull = false;
-        }
-        if(teleport_bar.value != 10 && !isTeleFull)
-        {
-            teleport_bar.value += Time.deltaTime;
-            if(teleport_bar.value > 9.9)
+
+            if(teleport_bar.value < 0.01)
             {
-                isTeleFull = true;
-            }
-        }
-        if(push_bar.value != 10 && !isPushFull)
-        {
-            push_bar.value += Time.deltaTime;
-            if(push_bar.value > 9.9)
-            {
-                isPushFull = true;
+                isTeleFull = false;
             }
         }
     }
@@ -72,6 +53,13 @@ public class Bullet : MonoBehaviour
             Vector2 col_hori = new Vector2(collision.gameObject.transform.position.x, collision.gameObject.transform.position.y);
             push_bar.value -= 2;
             GameObject.Find("player").GetComponent<SpriteRenderer>().color = Color.white;
+            
+            if(push_bar.value < 0.01)
+            {
+                print("Push false");
+                isPushFull = false;
+            }
+
             collision.gameObject.GetComponent<Rigidbody2D>()?.AddForce((col_hori - player_hori) * 300);  
         }
         
@@ -85,5 +73,20 @@ public class Bullet : MonoBehaviour
     public static bool getIsPushFull()
     {
         return isPushFull;
+    }
+
+    public static bool getIsTeleFull()
+    {
+        return isTeleFull;
+    }
+
+    public static void setIsPushFull(bool full)
+    {
+        isPushFull = full;
+    }
+
+    public static void setIsTeleFull(bool full)
+    {
+        isTeleFull = full;
     }
 }
