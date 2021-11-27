@@ -64,8 +64,9 @@ public class rifle : MonoBehaviour
             }
         }
 
-        if (Input.mouseScrollDelta.y > 0f)
+        if (Input.mouseScrollDelta.y > 0f && Bullet.getIsPushFull())
         {
+            GameObject.Find("player").GetComponent<SpriteRenderer>().color = Color.red;
             push = true;
             bulletPrefab.GetComponent<Bullet>().set_push_mod(push);
             print("push mod " + push);

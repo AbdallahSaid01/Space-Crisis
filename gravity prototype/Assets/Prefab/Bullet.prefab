@@ -166,3 +166,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   rb: {fileID: 7696023588704725360}
+  teleport_effect: {fileID: 6520760338313661571, guid: 88eaea413a3f6704e9f2fa062a28edc4, type: 3}
