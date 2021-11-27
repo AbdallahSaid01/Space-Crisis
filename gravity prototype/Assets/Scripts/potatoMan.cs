@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UIElements;
 public class potatoMan : MonoBehaviour
 {
     [SerializeField] private float speed;
@@ -14,13 +14,13 @@ public class potatoMan : MonoBehaviour
     // bool gravitydown is true when gravity is down or -1 on the y axis and false when gravity is up or 1 on the y axis
     private bool gravityDown;
     public Animator anim;
-
+    private Slider health_bar;
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         isJumping = 0;
         gravityDown = true;
-        
+        health_bar = GameObject.Find("Health Bar").GetComponent<Slider>();
     }
 
     private void Update()
@@ -101,4 +101,9 @@ public class potatoMan : MonoBehaviour
         return gravityDown;
     }
 
+    //Taking damage
+    public void take_damage(int dmg)
+    {
+        health_bar.value -= dmg;
+    }
 }
