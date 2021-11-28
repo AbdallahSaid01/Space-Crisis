@@ -62,8 +62,8 @@ public class Bullet : MonoBehaviour
 
             collision.gameObject.GetComponent<Rigidbody2D>()?.AddForce((col_hori - player_hori) * 300);  
         }
-        
-        Destroy(gameObject);
+        if(collision.gameObject.tag != "GravityFlipField")
+            Destroy(gameObject);
     }
     public void set_push_mod(bool mod)
     {
