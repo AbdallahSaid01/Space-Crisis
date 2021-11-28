@@ -15,15 +15,22 @@ public class potatoMan : MonoBehaviour
     // bool gravitydown is true when gravity is down or -1 on the y axis and false when gravity is up or 1 on the y axis
     private bool gravityDown;
     public Animator anim;
+
     private static Slider push_bar;
     private static Slider teleport_bar;
+
+    private Slider health_bar;
+
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         isJumping = 0;
         gravityDown = true;
+
         push_bar = GameObject.Find("Push Bar").GetComponent<Slider>();
         teleport_bar = GameObject.Find("Teleport Bar").GetComponent<Slider>();
+
+        health_bar = GameObject.Find("Health Bar").GetComponent<Slider>();
     }
 
     private void Update()
@@ -122,4 +129,9 @@ public class potatoMan : MonoBehaviour
         return gravityDown;
     }
 
+    //Taking damage
+    public void take_damage(int dmg)
+    {
+        health_bar.value -= dmg;
+    }
 }

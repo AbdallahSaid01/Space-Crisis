@@ -46,3 +46,6 @@ TagManager:
   - name: Ground
     uniqueID: 2140094963
     locked: 0
+  - name: Tank
+    uniqueID: 430797179
+    locked: 0
