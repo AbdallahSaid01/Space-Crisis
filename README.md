@@ -24,3 +24,16 @@ Licensed under Creative Commons: By Attribution 3.0 License
 http://creativecommons.org/licenses/by/3.0/
 Music promoted by https://www.chosic.com/free-music/all/
 
+Sprite sheet sources:
+
+Sci fi tileset Vanessa Zach
+https://zealotlee.wordpress.com/2015/07/07/sci-fi-tileset/
+
+Sci fi tileset Zeno
+https://forums.rpgmakerweb.com/index.php?threads/sci-fi-tileset-by-xenomizeru.132165/
+
+Sci fi lab tileset FoozleCC
+https://www.construct.net/en/game-assets/graphics/sprites/sci-fi-lab-tileset-pixel-art-550
+
+Sci fi tile set thisname-nottaken (on Reddit)
+https://www.reddit.com/r/PixelArt/comments/fsb9te/scifi_tileset_my_first_time_on_making_a_rpg/
