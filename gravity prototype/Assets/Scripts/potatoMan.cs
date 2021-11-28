@@ -85,14 +85,10 @@ public class potatoMan : MonoBehaviour
         }
 
         //switching gravity of the rigidbody
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            rigidbody2d.gravityScale *= -1;
-            if (gravityDown)
-                gravityDown = false;
-            else if (!gravityDown)
-                gravityDown = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    flipGravityDown();
+        //}
 
         //flipping sprite of character on y axis based on gravity direction
         if (gravityDown)
@@ -129,6 +125,15 @@ public class potatoMan : MonoBehaviour
     public bool getGravityDown()
     {
         return gravityDown;
+    }
+
+    public void flipGravityDown()
+    {
+        rigidbody2d.gravityScale *= -1;
+        if (gravityDown)
+            gravityDown = false;
+        else if (!gravityDown)
+            gravityDown = true;
     }
 
     //Taking damage

@@ -50,6 +50,7 @@ public class rifle : MonoBehaviour
                     Vector3 normalPostion = new Vector3(9.28f, 0.95f, -0.1f);
                     normalPostion.Normalize();
                     spriteRenderer.flipY = false;
+                    normalPostion.x *= 7;
                     transform.localPosition = normalPostion;
                     transform.localRotation = Quaternion.Euler(0f, 0f, rotation_z);
                 }
