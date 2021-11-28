@@ -15,12 +15,21 @@ public class potatoMan : MonoBehaviour
     // bool gravitydown is true when gravity is down or -1 on the y axis and false when gravity is up or 1 on the y axis
     private bool gravityDown;
     public Animator anim;
+
+    private static Slider push_bar;
+    private static Slider teleport_bar;
+
     private Slider health_bar;
+
     private void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         isJumping = 0;
         gravityDown = true;
+
+        push_bar = GameObject.Find("Push Bar").GetComponent<Slider>();
+        teleport_bar = GameObject.Find("Teleport Bar").GetComponent<Slider>();
+
         health_bar = GameObject.Find("Health Bar").GetComponent<Slider>();
     }
 
@@ -88,6 +97,24 @@ public class potatoMan : MonoBehaviour
             spriteRenderer.flipY = false;
         else if (!gravityDown)
             spriteRenderer.flipY = true;
+
+        if (teleport_bar.value != 10 && !Bullet.getIsTeleFull())
+        {
+            teleport_bar.value += Time.deltaTime;
+            if (teleport_bar.value > 9.9)
+            {
+                Bullet.setIsTeleFull(true);
+            }
+        }
+        if (push_bar.value != 10 && !Bullet.getIsPushFull())
+        {
+            print("Refilling push bar");
+            push_bar.value += Time.deltaTime;
+            if (push_bar.value > 9.9)
+            {
+                Bullet.setIsPushFull(true);
+            }
+        }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
