@@ -12,18 +12,21 @@ public class Enemy1Movement : MonoBehaviour
     private bool isFlipped = true;
     private SpriteRenderer player;
     
+    
     private void Start()
     {
         movementDirection = new Vector2(Random.Range(-1.0f, 1.0f), 0).normalized;
         enemy_ai.updateRotation = false;
         enemy_ai.updateUpAxis = false;
         player = GameObject.Find("player").GetComponent<SpriteRenderer>();
+       
+        
     }
     // Update is called once per frame
     void Update()
     {
         float distance = transform.position.magnitude - GameObject.Find("potato fight").transform.position.magnitude;
-        if(Mathf.Abs(distance) < 3)
+        if (Mathf.Abs(distance) < 3)
         {
             enemy_ai.enabled = true;
             enemy_ai.SetDestination(GameObject.Find("potato fight").transform.position);
@@ -45,6 +48,7 @@ public class Enemy1Movement : MonoBehaviour
 
             // For the movement animations
             animator.SetFloat("Speed", movementPerSecond.magnitude);
+
         }
         
     }
