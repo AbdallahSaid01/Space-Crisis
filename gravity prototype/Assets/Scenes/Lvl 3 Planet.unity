@@ -123,7 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD:gravity prototype/Assets/Scenes/SampleScene.unity
 --- !u!1001 &39573557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -268,8 +267,6 @@ Transform:
   m_Father: {fileID: 1400225869}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
-=======
->>>>>>> origin:gravity prototype/Assets/Scenes/Lvl 3 Planet.unity
 --- !u!1 &77485414
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +370,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
-<<<<<<< HEAD:gravity prototype/Assets/Scenes/SampleScene.unity
 --- !u!1 &104193369
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,8 +854,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
-=======
->>>>>>> origin:gravity prototype/Assets/Scenes/Lvl 3 Planet.unity
 --- !u!224 &222155100 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 568022663210275776, guid: ede2e630b65263c44b806101d81a314b, type: 3}
@@ -26341,7 +26335,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
-<<<<<<< HEAD:gravity prototype/Assets/Scenes/SampleScene.unity
 --- !u!114 &483887899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28521,9 +28514,6 @@ Transform:
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1570128010
-=======
---- !u!1 &546893051
->>>>>>> origin:gravity prototype/Assets/Scenes/Lvl 3 Planet.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28977,7 +28967,6 @@ Transform:
   m_Father: {fileID: 856217598}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD:gravity prototype/Assets/Scenes/SampleScene.unity
 --- !u!61 &1821769054
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29212,9 +29201,6 @@ BoxCollider2D:
   m_Size: {x: 1, y: 28.286083}
   m_EdgeRadius: 0
 --- !u!1 &1923736888
-=======
---- !u!1 &1436294650
->>>>>>> origin:gravity prototype/Assets/Scenes/Lvl 3 Planet.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29302,7 +29288,6 @@ Transform:
   m_Father: {fileID: 856217598}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD:gravity prototype/Assets/Scenes/SampleScene.unity
 --- !u!61 &1995680520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29538,71 +29523,6 @@ MonoBehaviour:
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &2013251245
-=======
---- !u!1001 &1505715582
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3693381550740211430, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_Name
-      value: potato fight
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3693381550740211434, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
---- !u!224 &1848375251 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3634153693606017505, guid: 0fa81b79e58afc94c826294b4f239ff3, type: 3}
-  m_PrefabInstance: {fileID: 3634153694983130674}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2114671466
->>>>>>> origin:gravity prototype/Assets/Scenes/Lvl 3 Planet.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
