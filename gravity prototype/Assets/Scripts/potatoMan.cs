@@ -40,7 +40,9 @@ public class potatoMan : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0.0f, 0.0f);
         direction = direction.normalized;
-        transform.position += direction * speed * Time.deltaTime;
+        if (horizontal < -0.1f || horizontal > 0.1f)
+            transform.Translate(direction * speed * Time.deltaTime);
+
         anim.SetFloat("running", Mathf.Abs(horizontal));
 
         //flipping character sprite based on the direction it is walking
@@ -83,14 +85,10 @@ public class potatoMan : MonoBehaviour
         }
 
         //switching gravity of the rigidbody
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            rigidbody2d.gravityScale *= -1;
-            if (gravityDown)
-                gravityDown = false;
-            else if (!gravityDown)
-                gravityDown = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    flipGravityDown();
+        //}
 
         //flipping sprite of character on y axis based on gravity direction
         if (gravityDown)
@@ -127,6 +125,15 @@ public class potatoMan : MonoBehaviour
     public bool getGravityDown()
     {
         return gravityDown;
+    }
+
+    public void flipGravityDown()
+    {
+        rigidbody2d.gravityScale *= -1;
+        if (gravityDown)
+            gravityDown = false;
+        else if (!gravityDown)
+            gravityDown = true;
     }
 
     //Taking damage
