@@ -16,14 +16,7 @@ public class door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (key.hasKey == true)
-        {
-            if(Input.GetKeyDown(KeyCode.Space))
-        {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                key.hasKey = false;
-            }
-        }
+    
             
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,10 +26,18 @@ public class door : MonoBehaviour
             if (key.hasKey == true)
             {
                 anim.SetBool("hasKey", true);
+                
             }
         }
  
 
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            key.hasKey = false;
+        }
+    }
 }
