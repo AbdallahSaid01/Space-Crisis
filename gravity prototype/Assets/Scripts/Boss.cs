@@ -16,7 +16,8 @@ public class Boss : MonoBehaviour
     public GameObject laser_prefab;
 
     private Slider health_bar;
-
+    public GameObject dying_points;
+    private Transform[] child;
     private bool use_laser = false;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,8 @@ public class Boss : MonoBehaviour
 
         health_bar = GameObject.Find("Boss Bar").GetComponent<Slider>();
         health_bar.value = 50;
+
+        child = dying_points.GetComponentsInChildren<Transform>();
     }
 
     // Update is called once per frame
@@ -75,5 +78,10 @@ public class Boss : MonoBehaviour
     {
         use_laser = true;
         health_bar.value -= dmg;
+    }
+
+    void die()
+    {
+
     }
 }
