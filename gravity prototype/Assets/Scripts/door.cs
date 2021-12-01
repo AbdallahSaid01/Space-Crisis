@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class door : MonoBehaviour
 {
     public Animator anim;
-   
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-    
-            
+
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,10 +26,10 @@ public class door : MonoBehaviour
             if (key.hasKey == true)
             {
                 anim.SetBool("hasKey", true);
-                
+
             }
         }
- 
+
 
     }
     private void OnTriggerStay2D(Collider2D collision)
