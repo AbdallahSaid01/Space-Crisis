@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
             GameObject.Find("potato fight").transform.position = gameObject.transform.position;
             Destroy(gameObject);
             Instantiate(teleport_effect, GameObject.Find("potato fight").transform.position, GameObject.Find("potato fight").transform.rotation);
-            teleport_bar.value -= 2;
+            teleport_bar.value -= 5;
 
             if(teleport_bar.value < 0.01)
             {

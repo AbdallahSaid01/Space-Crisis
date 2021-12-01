@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5071324795154464188}
   - component: {fileID: 8528172621296655634}
   - component: {fileID: 7696023588704725360}
-  - component: {fileID: 1940857012160114140}
+  - component: {fileID: -1777536015789376518}
   m_Layer: 0
   m_Name: Boss_Bullet
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: -4388899747337525858, guid: 77310e801d228a64eae94165a3227de9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &1940857012160114140
+--- !u!114 &-1777536015789376518
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 128330824118665272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c71ca70720d297b4f9a106babb17e0c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 4438945202a67ac438bebef3b55bb820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 60
   rb: {fileID: 7696023588704725360}
-  teleport_effect: {fileID: 6520760338313661571, guid: 88eaea413a3f6704e9f2fa062a28edc4, type: 3}
+  bullet_inpact_prefab: {fileID: 8685850765942232116, guid: debadafae2d447b42bb0b96254f03582, type: 3}

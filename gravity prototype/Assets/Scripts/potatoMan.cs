@@ -31,6 +31,10 @@ public class potatoMan : MonoBehaviour
         teleport_bar = GameObject.Find("Teleport Bar").GetComponent<Slider>();
 
         health_bar = GameObject.Find("Health Bar").GetComponent<Slider>();
+
+        health_bar.value = 20;
+        push_bar.value = 10;
+        teleport_bar.value = 10;
     }
 
     private void Update()
