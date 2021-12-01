@@ -7,6 +7,8 @@ TagManager:
   - ground
   - Stop
   - GravityFlipField
+  - enemy3
+  - enemy2
   layers:
   - Default
   - TransparentFX

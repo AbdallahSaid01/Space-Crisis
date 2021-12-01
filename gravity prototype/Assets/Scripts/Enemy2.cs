@@ -12,6 +12,7 @@ public class Enemy2 : MonoBehaviour
     public NavMeshAgent enemy_ai;
     private SpriteRenderer player;
     Vector2 posLastFrame;
+    float originalYPosition;
 
    
     private void Start()
@@ -21,6 +22,7 @@ public class Enemy2 : MonoBehaviour
         enemy_ai.updateUpAxis = false;
         player = GameObject.Find("player").GetComponent<SpriteRenderer>();
         Vector2 posLastFrame =  transform.position;
+        originalYPosition = transform.position.y;
        
     }
     // Update is called once per frame
@@ -31,12 +33,12 @@ public class Enemy2 : MonoBehaviour
         if (Mathf.Abs(distance) < 3)
         {
             enemy_ai.enabled = true;
-            Vector2 WhereToMove = new Vector2(GameObject.Find("potato fight").transform.position.x, transform.position.y);
+            Vector2 WhereToMove = new Vector2(GameObject.Find("potato fight").transform.position.x, originalYPosition);
             enemy_ai.SetDestination(WhereToMove);
           
 
         }
-        else
+       
         {
             enemy_ai.enabled = false;
             movementPerSecond = movementDirection * characterVelocity;
@@ -51,6 +53,16 @@ public class Enemy2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Stop")
+        {
+            movementDirection *= -1;
+            animator.SetFloat("Horizontal", animator.GetFloat("Horizontal") * -1);
+
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "enemy3" || collision.gameObject.tag == "enemy2")
         {
             movementDirection *= -1;
             animator.SetFloat("Horizontal", animator.GetFloat("Horizontal") * -1);

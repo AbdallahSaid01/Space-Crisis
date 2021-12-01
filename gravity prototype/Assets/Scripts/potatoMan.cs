@@ -75,6 +75,7 @@ public class potatoMan : MonoBehaviour
         }
 
         //changing direction of slam down force based on gravity direction
+
         if (Input.GetKeyDown(KeyCode.S) && gravityDown)
         {
             rigidbody2d.AddForce(Vector2.down * downForce);
@@ -119,6 +120,11 @@ public class potatoMan : MonoBehaviour
         //when colliding to the ground making the jump counter = 0
         if (collision.gameObject.tag == "ground")
             isJumping = 0;
+        if (collision.gameObject.tag == "enemy2" || collision.gameObject.tag == "enemy3")
+        {
+            take_damage(1);
+        }
+
     }
 
     //using this getter to get the gravity in the rifle script
