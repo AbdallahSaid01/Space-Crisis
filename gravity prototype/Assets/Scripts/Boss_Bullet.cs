@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class Boss_Bullet : MonoBehaviour
 {
     public float speed = 60f;
@@ -66,6 +66,7 @@ public class Boss_Bullet : MonoBehaviour
         else if(!collision.gameObject.name.Contains("Bullet"))
         {
             Instantiate(bullet_inpact_prefab, target_pos, target_rot);
+            GameObject.Find("Boss").GetComponent<NavMeshAgent>().enabled = true;
         }
         Destroy(gameObject);
 

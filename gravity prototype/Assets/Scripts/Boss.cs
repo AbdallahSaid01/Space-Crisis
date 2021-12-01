@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 public class Boss : MonoBehaviour
 {
     public NavMeshAgent boss_ai;
-    private SpriteRenderer player;
-    private bool chasePlayer = true;
     private float cooldown_1 = 3f;
-    //private float cooldow
     private Vector3 follow;
 
     public Transform firepoint_mouth;
@@ -16,13 +14,18 @@ public class Boss : MonoBehaviour
 
     public GameObject bullet_prefab;
     public GameObject laser_prefab;
+
+    private Slider health_bar;
+
+    private bool use_laser = false;
     // Start is called before the first frame update
     void Start()
     {
         boss_ai.updateRotation = false;
         boss_ai.updateUpAxis = false;
-        //boss_ai.updatePosition = false;
-        player = GameObject.Find("player").GetComponent<SpriteRenderer>();
+
+        health_bar = GameObject.Find("Boss Bar").GetComponent<Slider>();
+        health_bar.value = 50;
     }
 
     // Update is called once per frame
@@ -30,7 +33,7 @@ public class Boss : MonoBehaviour
     {
         cooldown_1 -= Time.deltaTime;
         follow = new Vector3(GameObject.Find("player").transform.position.x, GameObject.Find("FollowPoint").transform.position.y, 0);
-        //boss_ai.SetDestination(follow);
+        boss_ai.SetDestination(follow);
         firepoint_eye.LookAt(GameObject.Find("player").transform);
 
         float distance = GameObject.Find("player").transform.position.x - transform.position.x;
@@ -48,8 +51,14 @@ public class Boss : MonoBehaviour
         if(cooldown_1 < 0.01)
         {
             cooldown_1 = 3;
+            shoot_projectiles();
+        }
+        if(health_bar.value % 10 == 0 && health_bar.value < 50 && use_laser)
+        {
+            boss_ai.enabled = false;
             shoot_laser();
         }
+        use_laser = false;
     }
 
     void shoot_projectiles()
@@ -60,5 +69,11 @@ public class Boss : MonoBehaviour
     void shoot_laser()
     {
         Instantiate(laser_prefab, firepoint_eye.position, firepoint_eye.rotation);
+    }
+
+    public void take_damage(int dmg)
+    {
+        use_laser = true;
+        health_bar.value -= dmg;
     }
 }

@@ -301,6 +301,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 3693381550782577799}
   rigidbody2d: {fileID: 0}
   anim: {fileID: 3693381550782577796}
+  gameover: {fileID: 6294234864039126309, guid: 948596b292ea0114a88fb7146285a70e, type: 3}
 --- !u!1 &3693381550782577793
 GameObject:
   m_ObjectHideFlags: 0

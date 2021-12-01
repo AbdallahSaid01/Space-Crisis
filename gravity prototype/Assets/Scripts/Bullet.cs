@@ -61,6 +61,10 @@ public class Bullet : MonoBehaviour
             }
                 collision.gameObject.GetComponent<Rigidbody2D>()?.AddForce((col_hori - player_hori) * 300);  
         }
+        else if(collision.gameObject.name == "Boss")
+        {
+            GameObject.Find("Boss").GetComponent<Boss>().take_damage(5);
+        }
         if(collision.gameObject.tag != "GravityFlipField")
             Destroy(gameObject);
     }
