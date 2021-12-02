@@ -65,8 +65,11 @@ public class Bullet : MonoBehaviour
         {
             GameObject.Find("Boss").GetComponent<Boss>().take_damage(5);
         }
-        if(collision.gameObject.tag != "GravityFlipField")
+        if(collision.gameObject.tag != "GravityFlipField" || collision.gameObject.tag == "enemy2" || collision.gameObject.tag == "enemy3")
+        { 
             Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
     }
     public void set_push_mod(bool mod)
     {
