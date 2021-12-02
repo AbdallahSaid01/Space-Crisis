@@ -19,7 +19,7 @@ public class potatoMan : MonoBehaviour
     private static Slider push_bar;
     private static Slider teleport_bar;
 
-    private Slider health_bar;
+    public static Slider health_bar;
 
     private void Start()
     {
@@ -137,7 +137,7 @@ public class potatoMan : MonoBehaviour
     }
 
     //Taking damage
-    public void take_damage(int dmg)
+    public static void take_damage(int dmg)
     {
         health_bar.value -= dmg;
     }
