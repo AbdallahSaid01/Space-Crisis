@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
             GameObject.Find("potato fight").transform.position = gameObject.transform.position;
             Destroy(gameObject);
             Instantiate(teleport_effect, GameObject.Find("potato fight").transform.position, GameObject.Find("potato fight").transform.rotation);
-            teleport_bar.value -= 2;
+            teleport_bar.value -= 5;
 
             if(teleport_bar.value < 0.01)
             {
@@ -61,8 +61,11 @@ public class Bullet : MonoBehaviour
             }
                 collision.gameObject.GetComponent<Rigidbody2D>()?.AddForce((col_hori - player_hori) * 300);  
         }
-        if (collision.gameObject.tag == "enemy2" || collision.gameObject.tag == "enemy3")
+        else if(collision.gameObject.name == "Boss")
         {
+            GameObject.Find("Boss").GetComponent<Boss>().take_damage(5);
+        }
+        if(collision.gameObject.tag != "GravityFlipField" || collision.gameObject.tag == "enemy2" || collision.gameObject.tag == "enemy3")
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }

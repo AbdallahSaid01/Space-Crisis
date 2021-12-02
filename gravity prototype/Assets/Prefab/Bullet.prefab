@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 128330824118665272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.1039, y: -1.8348, z: 0}
-  m_LocalScale: {x: 0.8319, y: 0.6116, z: 1}
+  m_LocalScale: {x: 1.1334637, y: 0.9712972, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -144,6 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71ca70720d297b4f9a106babb17e0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 60
   rb: {fileID: 7696023588704725360}
   teleport_effect: {fileID: 6520760338313661571, guid: 88eaea413a3f6704e9f2fa062a28edc4, type: 3}
