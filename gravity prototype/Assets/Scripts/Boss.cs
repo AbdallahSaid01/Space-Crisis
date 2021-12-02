@@ -14,6 +14,7 @@ public class Boss : MonoBehaviour
 
     public GameObject bullet_prefab;
     public GameObject laser_prefab;
+    public GameObject impact_effect;
 
     private Slider health_bar;
     public GameObject dying_points;
@@ -61,6 +62,10 @@ public class Boss : MonoBehaviour
             boss_ai.enabled = false;
             shoot_laser();
         }
+        else if(health_bar.value == 0)
+        {
+            die();
+        }
         use_laser = false;
     }
 
@@ -82,6 +87,10 @@ public class Boss : MonoBehaviour
 
     void die()
     {
-
+        foreach(Transform baby in child)
+        {
+            Instantiate(impact_effect, baby.gameObject.transform.position, baby.gameObject.transform.rotation);
+        }
+        Destroy(gameObject);
     }
 }
