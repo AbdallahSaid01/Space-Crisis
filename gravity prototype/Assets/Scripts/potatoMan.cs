@@ -19,8 +19,11 @@ public class potatoMan : MonoBehaviour
     private static Slider push_bar;
     private static Slider teleport_bar;
 
-    private Slider health_bar;
+
     public GameObject gameover;
+
+    public static Slider health_bar;
+
     private void Start()
     {
         gameover = GameObject.Find("GameOver");
@@ -140,7 +143,7 @@ public class potatoMan : MonoBehaviour
     }
 
     //Taking damage
-    public void take_damage(int dmg)
+    public static void take_damage(int dmg)
     {
         health_bar.value -= dmg;
         if (health_bar.value == 0)
