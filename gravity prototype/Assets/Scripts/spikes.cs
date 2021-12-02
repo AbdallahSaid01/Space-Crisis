@@ -17,6 +17,6 @@ public class spikes : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        potatoMan.take_damage(1);
+        GameObject.Find("potato fight").GetComponent<potatoMan>().take_damage(1);
     }
 }

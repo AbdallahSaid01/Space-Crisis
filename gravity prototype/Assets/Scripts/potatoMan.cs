@@ -16,13 +16,13 @@ public class potatoMan : MonoBehaviour
     private bool gravityDown;
     public Animator anim;
 
-    private static Slider push_bar;
-    private static Slider teleport_bar;
+    private Slider push_bar;
+    private Slider teleport_bar;
 
 
     public GameObject gameover;
 
-    public static Slider health_bar;
+    public Slider health_bar;
 
     private void Start()
     {
@@ -143,7 +143,7 @@ public class potatoMan : MonoBehaviour
     }
 
     //Taking damage
-    public static void take_damage(int dmg)
+    public void take_damage(int dmg)
     {
         health_bar.value -= dmg;
         if (health_bar.value == 0)

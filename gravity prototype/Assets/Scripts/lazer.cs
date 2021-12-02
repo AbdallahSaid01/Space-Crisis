@@ -40,7 +40,7 @@ public class lazer : MonoBehaviour
     {
         if (lazer1 == true)
         {
-            potatoMan.take_damage(2);
+            GameObject.Find("potato fight").GetComponent<potatoMan>().take_damage(2);
             //Debug.Log("damage");
             
         }
