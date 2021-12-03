@@ -13,6 +13,9 @@ public class GravityFlipField : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<potatoMan>().flipGravityDown();
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<potatoMan>().flipGravityDown();
+        }
     }
 }

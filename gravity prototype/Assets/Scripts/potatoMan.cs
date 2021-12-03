@@ -16,13 +16,19 @@ public class potatoMan : MonoBehaviour
     private bool gravityDown;
     public Animator anim;
 
-    private static Slider push_bar;
-    private static Slider teleport_bar;
+    private Slider push_bar;
+    private Slider teleport_bar;
+
+
+    private GameObject gameover;
 
     private Slider health_bar;
 
     private void Start()
     {
+        gameover = GameObject.Find("GameOver");
+        GameObject.Find("GameOver").SetActive(false);
+        //gameover.SetActive(false);
         rigidbody2d = GetComponent<Rigidbody2D>();
         isJumping = 0;
         gravityDown = true;
@@ -31,6 +37,10 @@ public class potatoMan : MonoBehaviour
         teleport_bar = GameObject.Find("Teleport Bar").GetComponent<Slider>();
 
         health_bar = GameObject.Find("Health Bar").GetComponent<Slider>();
+
+        health_bar.value = 20;
+        push_bar.value = 10;
+        teleport_bar.value = 10;
     }
 
     private void Update()
@@ -75,6 +85,7 @@ public class potatoMan : MonoBehaviour
         }
 
         //changing direction of slam down force based on gravity direction
+
         if (Input.GetKeyDown(KeyCode.S) && gravityDown)
         {
             rigidbody2d.AddForce(Vector2.down * downForce);
@@ -83,12 +94,6 @@ public class potatoMan : MonoBehaviour
         {
             rigidbody2d.AddForce(Vector2.up * downForce);
         }
-
-        //switching gravity of the rigidbody
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    flipGravityDown();
-        //}
 
         //flipping sprite of character on y axis based on gravity direction
         if (gravityDown)
@@ -113,12 +118,19 @@ public class potatoMan : MonoBehaviour
                 Bullet.setIsPushFull(true);
             }
         }
+        
+        
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         //when colliding to the ground making the jump counter = 0
         if (collision.gameObject.tag == "ground")
             isJumping = 0;
+        if (collision.gameObject.tag == "enemy2" || collision.gameObject.tag == "enemy3")
+        {
+            take_damage(1);
+        }
+
     }
 
     //using this getter to get the gravity in the rifle script
@@ -140,5 +152,25 @@ public class potatoMan : MonoBehaviour
     public void take_damage(int dmg)
     {
         health_bar.value -= dmg;
+        if (health_bar.value == 0)
+        {
+            gameover.SetActive(true);
+            die();
+        }
+    }
+
+    public void die()
+    {
+        //gameover.SetActive(true);
+        Transform[] child = GameObject.Find("Player HUD").GetComponentsInChildren<Transform>();
+        foreach(Transform baby in child)
+        {
+            if(baby.gameObject.name.Contains("Bar"))
+            {
+                print("hello");
+                baby.gameObject.SetActive(false);
+            }
+        }
+        
     }
 }

@@ -57,6 +57,16 @@ public class Enemy3 : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "enemy3" || collision.gameObject.tag == "enemy2")
+        {
+            movementDirection *= -1;
+            animator.SetFloat("Horizontal", animator.GetFloat("Horizontal") * -1);
+
+        }
+    }
+
     void CheckHorizontal()
     {
         if (transform.position.x > posLastFrame.x) // he's looking right
