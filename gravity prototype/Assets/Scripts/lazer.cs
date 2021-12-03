@@ -38,7 +38,7 @@ public class lazer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (lazer1 == true)
+        if (lazer1 == true && collision.gameObject.name == "potato fight")
         {
             GameObject.Find("potato fight").GetComponent<potatoMan>().take_damage(2);
             //Debug.Log("damage");
