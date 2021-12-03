@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lvl 1 Spaceship.unity
     guid: afca09f7b3e1bdf47a31d76c558bcd40
   - enabled: 1
