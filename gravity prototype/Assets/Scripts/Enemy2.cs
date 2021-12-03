@@ -38,7 +38,7 @@ public class Enemy2 : MonoBehaviour
           
 
         }
-       
+       else
         {
             enemy_ai.enabled = false;
             movementPerSecond = movementDirection * characterVelocity;
