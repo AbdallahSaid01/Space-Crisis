@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lvl 1 Spaceship.unity
     guid: afca09f7b3e1bdf47a31d76c558bcd40
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a5341b37cbadae6488991e681e498ff3
+  - enabled: 1
     path: Assets/Scenes/Lvl 2 Spaceship.unity
     guid: f7818a966599567488e4a95c78a4d1bf
   - enabled: 1
@@ -17,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Boss.unity
     guid: 891d4a6b95b93bf40bf4105655dab3c1
+  - enabled: 1
+    path: Assets/Scenes/StartDialogueScene.unity
+    guid: 2904f85b4e149c545a62318e169d58e1
+  - enabled: 1
+    path: Assets/Scenes/PlanetDialogueScene.unity
+    guid: c0a7b5fdada3acf4e95c86ae920fb252
+  - enabled: 1
+    path: Assets/Scenes/EndingDialogueScene.unity
+    guid: 04d3db7deb875e94592a78fe8d4131ed
   m_configObjects: {}

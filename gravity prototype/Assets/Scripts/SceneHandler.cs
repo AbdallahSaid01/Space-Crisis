@@ -6,12 +6,12 @@ public class SceneHandler : MonoBehaviour
 {
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("Lvl 2 Spaceship");
+        SceneManager.LoadScene("StartDialogueScene");
     }
 
     public void QuitGame()
