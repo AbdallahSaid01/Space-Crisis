@@ -20,9 +20,9 @@ public class potatoMan : MonoBehaviour
     private Slider teleport_bar;
 
 
-    public GameObject gameover;
+    private GameObject gameover;
 
-    public Slider health_bar;
+    private Slider health_bar;
 
     private void Start()
     {

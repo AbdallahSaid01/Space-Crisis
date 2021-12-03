@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 128330824118665272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.1039, y: -1.8348, z: 0}
-  m_LocalScale: {x: 1.1334637, y: 0.9712972, z: 1}
+  m_LocalScale: {x: 0.47600162, y: 0.35657325, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.40217566, y: 0.0009496212}
+  m_Offset: {x: 0.48076367, y: 0.006140761}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.69483423, y: 0.8888161}
+  m_Size: {x: 0.5376582, y: 0.50467813}
   m_EdgeRadius: 0
 --- !u!50 &7696023588704725360
 Rigidbody2D:
@@ -146,4 +146,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 60
   rb: {fileID: 7696023588704725360}
+  bullet_effect: {fileID: 8685850765942232116, guid: debadafae2d447b42bb0b96254f03582, type: 3}
   teleport_effect: {fileID: 6520760338313661571, guid: 88eaea413a3f6704e9f2fa062a28edc4, type: 3}

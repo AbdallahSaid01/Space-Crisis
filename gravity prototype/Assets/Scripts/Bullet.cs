@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     private static Slider teleport_bar;
     private static bool isPushFull = true;
     private static bool isTeleFull = true;
-
+    public GameObject bullet_effect;
     public GameObject teleport_effect;
     // Start is called before the first frame update
     void Start()
@@ -59,16 +59,21 @@ public class Bullet : MonoBehaviour
                 print("Push false");
                 isPushFull = false;
             }
-                collision.gameObject.GetComponent<Rigidbody2D>()?.AddForce((col_hori - player_hori) * 300);  
+            collision.gameObject.GetComponent<Rigidbody2D>()?.AddForce((col_hori - player_hori) * 300);
+            Destroy(gameObject);
         }
         else if(collision.gameObject.name == "Boss")
         {
             GameObject.Find("Boss").GetComponent<Boss>().take_damage(5);
         }
-        if(collision.gameObject.tag == "enemy2" || collision.gameObject.tag == "enemy3")
-        { 
+        else if (collision.gameObject.tag != "GravityFlipField")
+        {
+            if ((collision.gameObject.tag == "enemy2" || collision.gameObject.tag == "enemy3"))
+            {
+                Destroy(collision.gameObject);
+                Instantiate(bullet_effect, transform.position, transform.rotation);
+            }
             Destroy(gameObject);
-            Destroy(collision.gameObject);
         }
     }
     public void set_push_mod(bool mod)
