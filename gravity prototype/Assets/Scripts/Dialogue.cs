@@ -62,7 +62,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Lvl 1 Spaceship");
+            //SceneManager.LoadScene("Lvl 1 Spaceship");
         }
     }
 }
