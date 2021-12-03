@@ -46,8 +46,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (enable_push_mod && push_bar.value > 0 && isPushFull && collision.gameObject.tag != "GravityFlipField")
+        Instantiate(bullet_effect, transform.position, transform.rotation);
+        if (enable_push_mod && push_bar.value > 0 && isPushFull && (collision.gameObject.tag != "GravityFlipField" || collision.gameObject.name == "Boss"))
         {
+            print("PUSH");
             enable_push_mod = false;
             Vector2 player_hori = new Vector2(GameObject.Find("player").transform.position.x, GameObject.Find("player").transform.position.y);
             Vector2 col_hori = new Vector2(collision.gameObject.transform.position.x, collision.gameObject.transform.position.y);
@@ -59,22 +61,23 @@ public class Bullet : MonoBehaviour
                 print("Push false");
                 isPushFull = false;
             }
-            collision.gameObject.GetComponent<Rigidbody2D>()?.AddForce((col_hori - player_hori) * 300);
+            collision.gameObject.GetComponent<Rigidbody2D>()?.AddForce((col_hori - player_hori) * 100);
             Destroy(gameObject);
         }
-        else if(collision.gameObject.name == "Boss")
+        if(collision.gameObject.name == "Boss")
         {
             GameObject.Find("Boss").GetComponent<Boss>().take_damage(5);
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag != "GravityFlipField")
         {
             if ((collision.gameObject.tag == "enemy2" || collision.gameObject.tag == "enemy3"))
             {
                 Destroy(collision.gameObject);
-                Instantiate(bullet_effect, transform.position, transform.rotation);
             }
             Destroy(gameObject);
         }
+        
     }
     public void set_push_mod(bool mod)
     {
