@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c71ca70720d297b4f9a106babb17e0c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 60
+  speed: 30
   rb: {fileID: 7696023588704725360}
   bullet_effect: {fileID: 8685850765942232116, guid: debadafae2d447b42bb0b96254f03582, type: 3}
   teleport_effect: {fileID: 6520760338313661571, guid: 88eaea413a3f6704e9f2fa062a28edc4, type: 3}

@@ -42,6 +42,7 @@ public class Bullet : MonoBehaviour
                 isTeleFull = false;
             }
         }
+            Destroy(gameObject, 0.7f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
