@@ -46,4 +46,6 @@ https://www.reddit.com/r/PixelArt/comments/fsb9te/scifi_tileset_my_first_time_on
 Warped Caves by Ansimuz
 https://assetstore.unity.com/packages/2d/characters/warped-caves-103250
 
+Sprites:
 
+Player, Enemy 2, Boss, Gameover background design and Bullet all done by Etienne via Piskel.com
