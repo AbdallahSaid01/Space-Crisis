@@ -128159,12 +128159,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3693381550740211435, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
+      propertyPath: rigidbody2d
+      value: 
+      objectReference: {fileID: 628948675}
     - target: {fileID: 3693381551001897261, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
       propertyPath: m_LightType
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
+--- !u!50 &628948675 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3693381550740211431, guid: adcc7a6bc390a58469341db36ced35ae, type: 3}
+  m_PrefabInstance: {fileID: 628948674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &669022651
 GameObject:
   m_ObjectHideFlags: 0
