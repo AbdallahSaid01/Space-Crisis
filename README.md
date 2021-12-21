@@ -49,3 +49,7 @@ https://assetstore.unity.com/packages/2d/characters/warped-caves-103250
 Sprites:
 
 Player, Enemy 2, Boss, Gameover background design and Bullet all done by Etienne via Piskel.com
+
+-------------------------------------------------
+
+This game has been created as a group project for COMP-376 at concordia university.
