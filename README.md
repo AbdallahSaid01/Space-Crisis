@@ -52,4 +52,4 @@ Player, Enemy 2, Boss, Gameover background design and Bullet all done by Etienne
 
 -------------------------------------------------
 
-This game has been created as a group project for COMP-376 at concordia university.
+This game has been created as a group project for COMP-376 at Concordia university.
